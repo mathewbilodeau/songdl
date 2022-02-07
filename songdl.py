@@ -162,16 +162,16 @@ class Songdl(tk.Tk):
         url = self.find_youtube_url_for_song(self.title_string_variable.get(), self.artist_string_variable.get())
         self.information_string_variable.set(url)
         full_file_path = self.download_audio_from_youtube_video(url, file_path=self.file_path_string_variable.get())
-        # self.update_metadata(full_file_path,
-        #                      title=self.title_string_variable.get().replace(self.REQUIRED_FIELD_DEFAULT, ""),
-        #                      contributing_artists=self.contributing_artists_string_variable.get().replace(
-        #                          self.RECOMMENDED_FIELD_DEFAULT, ""),
-        #                      album_artist=self.artist_string_variable.get().replace(self.RECOMMENDED_FIELD_DEFAULT, ""),
-        #                      album=self.album_string_variable.get().replace(self.OPTIONAL_FIELD_DEFAULT, ""),
-        #                      year=self.year_string_variable.get().replace(self.OPTIONAL_FIELD_DEFAULT, ""),
-        #                      track_number=self.track_number_string_variable.get().replace(self.OPTIONAL_FIELD_DEFAULT,
-        #                                                                                   ""),
-        #                      genre=self.genre_string_variable.get().replace(self.OPTIONAL_FIELD_DEFAULT, ""))
+        self.update_metadata(full_file_path,
+                             title=self.title_string_variable.get().replace(self.REQUIRED_FIELD_DEFAULT, ""),
+                             contributing_artists=self.contributing_artists_string_variable.get().replace(
+                                 self.RECOMMENDED_FIELD_DEFAULT, ""),
+                             album_artist=self.artist_string_variable.get().replace(self.RECOMMENDED_FIELD_DEFAULT, ""),
+                             album=self.album_string_variable.get().replace(self.OPTIONAL_FIELD_DEFAULT, ""),
+                             year=self.year_string_variable.get().replace(self.OPTIONAL_FIELD_DEFAULT, ""),
+                             track_number=self.track_number_string_variable.get().replace(self.OPTIONAL_FIELD_DEFAULT,
+                                                                                          ""),
+                             genre=self.genre_string_variable.get().replace(self.OPTIONAL_FIELD_DEFAULT, ""))
 
     def revert_text_fields(self):
         self.information_string_variable.set("Fill in the below fields and then press download.")
